@@ -22,7 +22,11 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward);
         });
     }
 
@@ -46,7 +50,11 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward);
         });
     }
 
@@ -70,7 +78,11 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward);
         });
     }
 
@@ -94,7 +106,11 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward,
+                Instruction.Forward);
         });
     }
 
