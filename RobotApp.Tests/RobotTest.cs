@@ -20,13 +20,14 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.North);
 
-        Assert.Throws<InvalidOperationException>(() =>
-        {
-            robot.ReceiveCommands(
-                Instruction.Forward,
+        robot.ReceiveCommands(
                 Instruction.Forward,
                 Instruction.Forward,
                 Instruction.Forward);
+
+        Assert.Throws<InvalidOperationException>(() =>
+        {
+            robot.ReceiveCommand(Instruction.Forward);
         });
     }
 
@@ -48,13 +49,11 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.South);
 
+        robot.ReceiveCommand(Instruction.Forward);
+
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.ReceiveCommands(
-                Instruction.Forward,
-                Instruction.Forward,
-                Instruction.Forward,
-                Instruction.Forward);
+            robot.ReceiveCommand(Instruction.Forward);
         });
     }
 
@@ -76,13 +75,14 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.West);
 
-        Assert.Throws<InvalidOperationException>(() =>
-        {
-            robot.ReceiveCommands(
-                Instruction.Forward,
+        robot.ReceiveCommands(
                 Instruction.Forward,
                 Instruction.Forward,
                 Instruction.Forward);
+
+        Assert.Throws<InvalidOperationException>(() =>
+        {
+            robot.ReceiveCommand(Instruction.Forward);
         });
     }
 
@@ -104,13 +104,11 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.East);
 
+        robot.ReceiveCommand(Instruction.Forward);
+
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.ReceiveCommands(
-                Instruction.Forward,
-                Instruction.Forward,
-                Instruction.Forward,
-                Instruction.Forward);
+            robot.ReceiveCommand(Instruction.Forward);
         });
     }
 

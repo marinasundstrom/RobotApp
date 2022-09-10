@@ -97,7 +97,7 @@ public class Robot
                 break;
 
             case Direction.East:
-                if (position.X >= world.Width)
+                if (position.X + 1 >= world.Width)
                 {
                     throw new InvalidOperationException();
                 }
@@ -105,7 +105,7 @@ public class Robot
                 break;
 
             case Direction.South:
-                if (position.Y >= world.Depth)
+                if (position.Y + 1 >= world.Depth)
                 {
                     throw new InvalidOperationException();
                 }
