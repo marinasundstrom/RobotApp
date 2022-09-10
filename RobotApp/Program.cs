@@ -29,16 +29,32 @@ if (robotSetupParts.Length != 3)
     return;
 }
 
-var x = int.Parse(robotSetupParts[0]);
-var y = int.Parse(robotSetupParts[1]);
-if (robotSetupParts[2].Length != 1)
+if(!int.TryParse(robotSetupParts[0], out var x))
+{
+    Console.WriteLine("[X] expected to be an integer");
+
+    return;
+}
+
+if(!int.TryParse(robotSetupParts[1], out var y))
+{
+    Console.WriteLine("[Y] expected to be an integer");
+
+    return;
+}
+
+var directionPart = robotSetupParts[2];
+if (directionPart.Length != 1 && char.IsUpper(directionPart[0]))
 {
     Console.WriteLine("Expected one of (N)orth, (E)ast, (S)outh, (W)est");
 }
+
 var direction = Enum.GetValues<Direction>()
-    .First(x => x.ToString().StartsWith(robotSetupParts[2].ToUpper()));
+    .First(x => x.ToString().StartsWith(directionPart.ToUpper()));
 
 Robot robot = new Robot(world, new Point(x, y), direction);
+
+char[] validInstructionChars = new[] { 'F', 'L', 'R' };
 
 while (true)
 {
@@ -50,20 +66,27 @@ while (true)
         return;
     }
 
+    if (!instructions.All(c => validInstructionChars.Any(x => x == c)))
+    {
+        Console.WriteLine("Expected a sequence of (F)orward, (L)eft, (R)ight - or EXIT");
+        continue;
+    }
+
     foreach (var instruction in instructions)
     {
-        //if (instructionParts.Length != 1)
-        //{
-        //    Console.WriteLine("Expected a sequence of (F)orward, (L)eft, (R)ight - or EXIT");
-        //}
-
         var walkingDirection = Enum.GetValues<Instruction>()
             .First(x => x.ToString().StartsWith(char.ToUpper(instruction)));
 
-        var result = robot.ReceiveCommand(walkingDirection);
+        try
+        {
+            var result = robot.ReceiveCommand(walkingDirection);
+        }
+        catch(InvalidOperationException)
+        {
+            Console.WriteLine("You were going out of the bounds of the world.");
+            break;
+        }
     }
 
     Console.WriteLine($"Report: {robot.Position.X} {robot.Position.Y} {robot.Direction.ToString().First()}");
-
-    Console.WriteLine($"Done");
 }
