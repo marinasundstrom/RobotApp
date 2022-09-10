@@ -18,14 +18,14 @@ public class Robot
     public Point Position => position;
     public Direction Direction => direction;
 
-    public (Point Position, Direction Direction) Command(Instruction walkingDirection)
+    public (Point Position, Direction Direction) ReceiveCommand(Instruction walkingDirection)
     {
         InterpretInstruction(walkingDirection);
 
         return (position, direction);
     }
 
-    public (Point Position, Direction Direction) Command(params Instruction[] instructions)
+    public (Point Position, Direction Direction) ReceiveCommands(params Instruction[] instructions)
     {
         foreach (var instruction in instructions)
         {
@@ -40,24 +40,24 @@ public class Robot
         switch (instruction)
         {
             case Instruction.Right:
-                direction = RotateRight();
+                RotateRight();
                 break;
 
             case Instruction.Left:
-                direction = RotateLeft();
+                RotateLeft();
                 break;
 
             default:
-                MoveOneStep();
+                MoveForward();
                 break;
         }
     }
 
-    private Direction RotateRight()
+    private void RotateRight()
     {
         var currentDirection = direction;
 
-        return (currentDirection) switch
+        direction = (currentDirection) switch
         {
             Direction.North => Direction.East,
             Direction.East => Direction.South,
@@ -67,11 +67,11 @@ public class Robot
         };
     }
 
-    private Direction RotateLeft()
+    private void RotateLeft()
     {
         var currentDirection = direction;
 
-        return (currentDirection) switch
+        direction = (currentDirection) switch
         {
             Direction.North => Direction.West,
             Direction.West => Direction.South,
@@ -81,7 +81,7 @@ public class Robot
         };
     }
 
-    private void MoveOneStep()
+    private void MoveForward()
     {
         var currentDirection = direction;
         var currentPosition = position;

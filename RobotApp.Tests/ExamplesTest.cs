@@ -8,7 +8,7 @@ public class ExamplesTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.North);
 
-        var result = robot.Command(
+        var result = robot.ReceiveCommands(
             Instruction.Left,
             Instruction.Forward,
             Instruction.Forward,
@@ -27,7 +27,7 @@ public class ExamplesTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(1, 2), Direction.North);
 
-        var result = robot.Command(
+        var result = robot.ReceiveCommands(
             Instruction.Right,
             Instruction.Forward,
             Instruction.Right,
@@ -48,7 +48,7 @@ public class ExamplesTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(0, 0), Direction.East);
 
-        var result = robot.Command(
+        var result = robot.ReceiveCommands(
             Instruction.Right,
             Instruction.Forward,
             Instruction.Left,

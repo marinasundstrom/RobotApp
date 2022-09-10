@@ -8,7 +8,7 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.North);
 
-        var result = robot.Command(Instruction.Forward);
+        var result = robot.ReceiveCommand(Instruction.Forward);
 
         Assert.Equal(new Point(3, 2), result.Position);
         Assert.Equal(Direction.North, result.Direction);
@@ -22,7 +22,7 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.Command(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
         });
     }
 
@@ -32,7 +32,7 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.South);
 
-        var result = robot.Command(Instruction.Forward);
+        var result = robot.ReceiveCommand(Instruction.Forward);
 
         Assert.Equal(new Point(3, 4), result.Position);
         Assert.Equal(Direction.South, result.Direction);
@@ -46,7 +46,7 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.Command(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
         });
     }
 
@@ -56,7 +56,7 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.West);
 
-        var result = robot.Command(Instruction.Forward);
+        var result = robot.ReceiveCommand(Instruction.Forward);
 
         Assert.Equal(new Point(2, 3), result.Position);
         Assert.Equal(Direction.West, result.Direction);
@@ -70,7 +70,7 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.Command(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
         });
     }
 
@@ -80,7 +80,7 @@ public class RobotTest
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(3, 3), Direction.East);
 
-        var result = robot.Command(Instruction.Forward);
+        var result = robot.ReceiveCommand(Instruction.Forward);
 
         Assert.Equal(new Point(4, 3), result.Position);
         Assert.Equal(Direction.East, result.Direction);
@@ -94,7 +94,7 @@ public class RobotTest
 
         Assert.Throws<InvalidOperationException>(() =>
         {
-            robot.Command(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
+            robot.ReceiveCommands(Instruction.Forward, Instruction.Forward, Instruction.Forward, Instruction.Forward);
         });
     }
 
@@ -104,7 +104,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.North);
 
-        var result = robot.Command(Instruction.Right);
+        var result = robot.ReceiveCommand(Instruction.Right);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.East, result.Direction);
@@ -116,7 +116,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.East);
 
-        var result = robot.Command(Instruction.Right);
+        var result = robot.ReceiveCommand(Instruction.Right);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.South, result.Direction);
@@ -128,7 +128,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.South);
 
-        var result = robot.Command(Instruction.Right);
+        var result = robot.ReceiveCommand(Instruction.Right);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.West, result.Direction);
@@ -140,7 +140,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.West);
 
-        var result = robot.Command(Instruction.Right);
+        var result = robot.ReceiveCommand(Instruction.Right);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.North, result.Direction);
@@ -152,7 +152,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.North);
 
-        var result = robot.Command(Instruction.Left);
+        var result = robot.ReceiveCommand(Instruction.Left);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.West, result.Direction);
@@ -164,7 +164,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.East);
 
-        var result = robot.Command(Instruction.Left);
+        var result = robot.ReceiveCommand(Instruction.Left);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.North, result.Direction);
@@ -176,7 +176,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.South);
 
-        var result = robot.Command(Instruction.Left);
+        var result = robot.ReceiveCommand(Instruction.Left);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.East, result.Direction);
@@ -188,7 +188,7 @@ public class RobotTest
         World world = new(5, 7);
         Robot robot = new Robot(world, new Point(3, 3), Direction.East);
 
-        var result = robot.Command(Instruction.Left);
+        var result = robot.ReceiveCommand(Instruction.Left);
 
         Assert.Equal(new Point(3, 3), result.Position);
         Assert.Equal(Direction.North, result.Direction);

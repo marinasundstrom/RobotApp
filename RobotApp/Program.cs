@@ -60,7 +60,7 @@ while (true)
         var walkingDirection = Enum.GetValues<Instruction>()
             .First(x => x.ToString().StartsWith(char.ToUpper(instruction)));
 
-        var result = robot.Command(walkingDirection);
+        var result = robot.ReceiveCommand(walkingDirection);
     }
 
     Console.WriteLine($"Report: {robot.Position.X} {robot.Position.Y} {robot.Direction.ToString().First()}");
