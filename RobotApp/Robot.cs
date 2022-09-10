@@ -18,9 +18,9 @@ public class Robot
     public Point Position => position;
     public Direction Direction => direction;
 
-    public (Point Position, Direction Direction) ReceiveCommand(Instruction walkingDirection)
+    public (Point Position, Direction Direction) ReceiveCommand(Instruction instruction)
     {
-        InterpretInstruction(walkingDirection);
+        InterpretInstruction(instruction);
 
         return (position, direction);
     }
@@ -47,7 +47,7 @@ public class Robot
                 RotateLeft();
                 break;
 
-            default:
+            case Instruction.Forward:
                 MoveForward();
                 break;
         }
@@ -89,7 +89,7 @@ public class Robot
         switch (currentDirection)
         {
             case Direction.North:
-                if (position.Y - 1 < 0)
+                if (currentPosition.Y - 1 < 0)
                 {
                     throw new InvalidOperationException();
                 }
@@ -97,7 +97,7 @@ public class Robot
                 break;
 
             case Direction.East:
-                if (position.X + 1 >= world.Width)
+                if (currentPosition.X + 1 >= world.Width)
                 {
                     throw new InvalidOperationException();
                 }
@@ -105,7 +105,7 @@ public class Robot
                 break;
 
             case Direction.South:
-                if (position.Y + 1 >= world.Depth)
+                if (currentPosition.Y + 1 >= world.Depth)
                 {
                     throw new InvalidOperationException();
                 }
@@ -113,7 +113,7 @@ public class Robot
                 break;
 
             case Direction.West:
-                if (position.X - 1 < 0)
+                if (currentPosition.X - 1 < 0)
                 {
                     throw new InvalidOperationException();
                 }

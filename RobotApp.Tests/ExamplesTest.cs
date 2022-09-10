@@ -8,7 +8,7 @@ public class ExamplesTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.North);
+        Robot robot = new(world, new Point(3, 3), Direction.North);
 
         // Act
 
@@ -31,7 +31,7 @@ public class ExamplesTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(1, 2), Direction.North);
+        Robot robot = new (world, new Point(1, 2), Direction.North);
 
         // Act
 
@@ -58,7 +58,7 @@ public class ExamplesTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(0, 0), Direction.East);
+        Robot robot = new (world, new Point(0, 0), Direction.East);
 
         // Act
 

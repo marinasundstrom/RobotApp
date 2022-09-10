@@ -8,7 +8,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.North);
+        Robot robot = new (world, new Point(3, 3), Direction.North);
 
         // Act
 
@@ -26,7 +26,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.North);
+        Robot robot = new (world, new Point(3, 3), Direction.North);
 
         // Act
 
@@ -49,7 +49,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.South);
+        Robot robot = new (world, new Point(3, 3), Direction.South);
 
         // Act
 
@@ -67,7 +67,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.South);
+        Robot robot = new (world, new Point(3, 3), Direction.South);
 
         // Act
 
@@ -87,7 +87,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.West);
+        Robot robot = new (world, new Point(3, 3), Direction.West);
 
         // Act
 
@@ -105,7 +105,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.West);
+        Robot robot = new (world, new Point(3, 3), Direction.West);
 
         // Act
 
@@ -128,7 +128,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.East);
+        Robot robot = new (world, new Point(3, 3), Direction.East);
 
         // Act
 
@@ -146,7 +146,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 5);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.East);
+        Robot robot = new (world, new Point(3, 3), Direction.East);
 
         // Act
 
@@ -166,7 +166,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.North);
+        Robot robot = new (world, new Point(3, 3), Direction.North);
 
         // Act
 
@@ -184,7 +184,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.East);
+        Robot robot = new (world, new Point(3, 3), Direction.East);
 
         // Act
 
@@ -202,7 +202,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.South);
+        Robot robot = new (world, new Point(3, 3), Direction.South);
 
         // Act
 
@@ -220,7 +220,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.West);
+        Robot robot = new (world, new Point(3, 3), Direction.West);
 
         // Act
 
@@ -238,7 +238,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.North);
+        Robot robot = new (world, new Point(3, 3), Direction.North);
 
         // Act
 
@@ -256,7 +256,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.East);
+        Robot robot = new (world, new Point(3, 3), Direction.East);
 
         // Act
 
@@ -274,7 +274,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.South);
+        Robot robot = new (world, new Point(3, 3), Direction.South);
 
         // Act
 
@@ -292,7 +292,7 @@ public class RobotTest
         // Arrange
 
         World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.East);
+        Robot robot = new (world, new Point(3, 3), Direction.East);
 
         // Act
 

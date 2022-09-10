@@ -52,7 +52,7 @@ if (directionPart.Length != 1 && char.IsUpper(directionPart[0]))
 var direction = Enum.GetValues<Direction>()
     .First(x => x.ToString().StartsWith(directionPart.ToUpper()));
 
-Robot robot = new Robot(world, new Point(x, y), direction);
+Robot robot = new (world, new Point(x, y), direction);
 
 char[] validInstructionChars = new[] { 'F', 'L', 'R' };
 
