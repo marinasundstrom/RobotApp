@@ -1,16 +1,7 @@
 ﻿namespace RobotApp.Tests;
 
-public class UnitTest1
+public class ExamplesTest
 {
-    [Fact]
-    public void Test1()
-    {
-        World world = new(5, 7);
-        Robot robot = new Robot(world, new Point(3, 3), Direction.North);
-
-        var position = robot.Command(Instruction.Left);
-    }
-
     [Fact]
     public void Example1()
     {
