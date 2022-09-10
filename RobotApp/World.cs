@@ -9,7 +9,7 @@ public class World
         Depth = depth;
     }
 
-    public int Width { get; set; }
+    public int Width { get; }
 
-    public int Depth { get; set; }
+    public int Depth { get; }
 }

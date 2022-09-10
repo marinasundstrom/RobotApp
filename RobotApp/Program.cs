@@ -5,7 +5,7 @@ var init = Console.ReadLine();
 
 var initParts = init?.Split() ?? Array.Empty<string>();
 
-if(initParts.Length != 2)
+if (initParts.Length != 2)
 {
     Console.WriteLine("Expected [Width] [Depth]");
 
@@ -31,7 +31,7 @@ if (robotSetupParts.Length != 3)
 
 var x = int.Parse(robotSetupParts[0]);
 var y = int.Parse(robotSetupParts[1]);
-if(robotSetupParts[2].Length != 1)
+if (robotSetupParts[2].Length != 1)
 {
     Console.WriteLine("Expected one of (N)orth, (E)ast, (S)outh, (W)est");
 }
@@ -40,7 +40,7 @@ var direction = Enum.GetValues<Direction>()
 
 Robot robot = new Robot(world, new Point(x, y), direction);
 
-while(true)
+while (true)
 {
     Console.Write("Enter instruction(s) ([Direction]): ");
     var instructions = Console.ReadLine();

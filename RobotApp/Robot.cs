@@ -48,7 +48,7 @@ public class Robot
                 break;
 
             default:
-                 MoveOneStep();
+                MoveOneStep();
                 break;
         }
     }
@@ -89,7 +89,7 @@ public class Robot
         switch (currentDirection)
         {
             case Direction.North:
-                if(position.Y - 1 < 0)
+                if (position.Y - 1 < 0)
                 {
                     throw new InvalidOperationException();
                 }

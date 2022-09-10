@@ -53,7 +53,7 @@ public class UnitTest1
 
     [Fact]
     public void Example3()
-    { 
+    {
         World world = new(5, 5);
         Robot robot = new Robot(world, new Point(0, 0), Direction.East);
 
